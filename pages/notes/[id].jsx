@@ -8,7 +8,14 @@ const Page = () => {
 
   const { id } = router.query;
 
-  return <div>Note Page {id}</div>;
+  return (
+    <div>
+      Note Page {id}
+      <br />
+      <br />
+      <button onClick={(e) => router.push('/')}>Go To Home Page</button>
+    </div>
+  );
 };
 
 export default Page;

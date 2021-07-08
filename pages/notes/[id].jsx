@@ -1,21 +1,22 @@
+/** @jsxRuntime classic */
+/** @jsx jsx */
+
+import { jsx } from 'theme-ui';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 
-//useRouter is for functional components
-//withRouter is for functional components
-
-const Page = () => {
+const NoteID = () => {
   const router = useRouter();
-
   const { id } = router.query;
 
   return (
-    <div>
-      Note Page {id}
-      <br />
-      <br />
-      <button onClick={(e) => router.push('/')}>Go To Home Page</button>
+    <div
+      sx={{
+        variant: 'containers.page',
+      }}
+    >
+      <h1>My Note : {id}</h1>
     </div>
   );
 };
-
-export default Page;
+export default NoteID;

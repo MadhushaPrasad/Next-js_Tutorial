@@ -3,7 +3,7 @@ import Link from 'next/link';
 const Page = () => {
   return (
     <div>
-      <h1>Index Page</h1>
+      <h1 className="hello">Index Page</h1>
       <Link href="notes">
         <a>Notice</a>
       </Link>

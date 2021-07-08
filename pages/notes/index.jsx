@@ -1,17 +1,45 @@
-import { useRouter } from 'next/router';
+/** @jsxRuntime classic */
+/** @jsx jsx */
 
-const Page = () => {
-  const router = useRouter();
-  const id = 2;
+import { jsx } from 'theme-ui';
+import Link from 'next/link';
+
+const Note = () => {
+  const notes = new Array()
+    .fill(1)
+    .map((e, i) => ({ id: i, title: `This is my note ${i}` }));
+
   return (
-    <div>
-      Note Index Page
-      <br />
-      <button onClick={(e) => router.push('/notes/[id]', `/notes/${id}`)}>
-        Go To Note Page 02
-      </button>
+    <div
+      sx={{
+        variant: 'containers.page',
+      }}
+    >
+      <h1>My Notes</h1>
+      <div
+        sx={{
+          variant: 'containers.page',
+          display: 'flex',
+          alignItem: 'center',
+          justifyContent: 'space-between',
+          height: '100%',
+        }}
+      >
+        {notes.map((note) => (
+          <div
+            sx={{
+              width: '33%',
+              p: 2,
+            }}
+          >
+            <Link key={note.id} href="/notes/[id]" as={`/notes/${note.id}`}>
+              <a sx={{ textDecoration: 'none', cursor: 'pointer' }}></a>
+              <strong>{note.title}</strong>
+            </Link>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
-
-export default Page;
+export default Note;

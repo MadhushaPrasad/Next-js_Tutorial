@@ -14,7 +14,7 @@ const handler = nc()
     };
 
     notes.push(note);
-    res.json({ data: note });
+    res.json({ data: notes });
   });
 
 export default handler;

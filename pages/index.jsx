@@ -37,3 +37,4 @@ export async function getStaticProps({ params }) {
     props: {},
   };
 }
+

@@ -2,7 +2,6 @@
 /** @jsx jsx */
 
 import { jsx } from 'theme-ui';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 const NoteID = () => {

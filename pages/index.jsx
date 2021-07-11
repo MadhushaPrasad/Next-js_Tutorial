@@ -28,3 +28,12 @@ const App = () => {
   );
 };
 export default App;
+
+//create nextjs export async getStaticProps function with context params
+export async function getStaticProps({ params }) {
+  console.log('getStaticProps context');
+
+  return {
+    props: {},
+  };
+}
